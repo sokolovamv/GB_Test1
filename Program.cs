@@ -24,13 +24,13 @@ int sizeNewArray(string[] inNewArray) // подсчет количества э�
 string[] GetArray(string[] inNewArr, int size) // формирование выходного массива
 {
     string[] NewArray = new string[size];
-    size = 0; // обнуляем размерность для поочердного заполнения выходного массива
+    int k = 0; // счетчик для поочердного заполнения выходного массива
     for (int j = 0; j < inNewArr.Length; j++)
     {
         if (inNewArr[j].Length <= 3) 
         {
-            NewArray[size] = inNewArr[j];
-            size++;
+            NewArray[k] = inNewArr[j];
+            k++;
         }    
     }
     return NewArray;
