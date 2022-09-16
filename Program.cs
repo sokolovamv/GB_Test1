@@ -7,6 +7,7 @@ string[] array = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEnt
 PrintArray(array);
 Console.WriteLine();
 int col = sizeNewArray(array);
+PrintArray(GetArray(array, col));
 
 int sizeNewArray(string[] inNewArray)
 {
@@ -19,6 +20,21 @@ int sizeNewArray(string[] inNewArray)
         }    
     }
     return count;
+}
+
+string[] GetArray(string[] inNewArr, int size)
+{
+    string[] NewArray = new string[size];
+    size = 0;
+    for (int j = 0; j < inNewArr.Length; j++)
+    {
+        if (inNewArr[j].Length <= 3) 
+        {
+            NewArray[size] = inNewArr[j];
+            size++;
+        }    
+    }
+    return NewArray;
 }
 
 void PrintArray(string[] inArray) // печать матрицы
